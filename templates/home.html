@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Mobil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .car-item {
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .car-name {
+            margin-top: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .car-year {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='img/dealer1.jpg') }}" class="img-fluid" height="500" width="1550" alt="Gambar Beranda" />
+
+    <header><h1>Daftar Mobil</h1></header>
+n\
+    <header><h1>Mobil Klasik</h1></header>
+    <div class="car-gallery">
+        {% for img, name, year in [
+            ('klasik.jpg', 'Ford Mustang', '1965'),
+            ('klasik2.jpg', 'Duesenberg SJ', '1933'),
+            ('klasik3.jpg', 'GAZ-13 Chaika', '1959'),
+            ('klasik4.jpg', 'Dodge Charger', '1969'),
+            ('klasiik5.jpg', 'Nissan Fairlady Z', '1970'),
+            ('klasik6.jpg', 'Subaru 360', '1961')] %}
+        <div class="car-item">
+            <img src="{{ url_for('static', filename='img/' ~ img) }}" class="car-img" alt="{{ name }}">
+            <p class="car-name">{{ name }}</p>
+            <p class="car-year">{{ year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <header><h1>Mobil Sport</h1></header>
+    <div class="car-gallery">
+        {% for img, name, year in [
+            ('sport1.jpg', 'Ferrari 488', '2015'),
+            ('sport2.jpg', 'Lamborghini Aventador', '2011'),
+            ('sport3.jpg', 'Chevrolet Corvette', '2020'),
+            ('sport5.jpg', 'Bugatti Veyron', '2005'),
+            ('sport6.jpg', 'Porsche 911', '2019'),
+            ('sport7.jpg', 'McLaren 720S', '2017')] %}
+        <div class="car-item">
+            <img src="{{ url_for('static', filename='img/' ~ img) }}" class="car-img" alt="{{ name }}">
+            <p class="car-name">{{ name }}</p>
+            <p class="car-year">{{ year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <header><h1>Mobil JDM</h1></header>
+    <div class="car-gallery">
+        {% for img, name, year in [
+            ('rx7.jpg', 'Mazda RX-7', '1992'),
+            ('supra.jpg', 'Toyota Supra MK4', '1998'),
+            ('skyline.jpg', 'Nissan Skyline GT-R R34', '1999'),
+            ('JDM.jpg', 'Honda NSX', '1991'),
+            ('JDM2.jpg', 'Subaru WRX STI', '2006'),
+            ('JDM3.jpg', 'Toyota AE86', '1985')] %}
+        <div class="car-item">
+            <img src="{{ url_for('static', filename='img/' ~ img) }}" class="car-img" alt="{{ name }}">
+            <p class="car-name">{{ name }}</p>
+            <p class="car-year">{{ year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <header><h1>Mobil Sehari-hari</h1></header>
+    <div class="car-gallery">
+        {% for img, name, year in [
+            ('porche.jpg', 'Porsche Cayenne', '2020'),
+            ('mercedes.jpg', 'Mercedes C-Class', '2021'),
+            ('BMW.jpg', 'BMW 3 Series', '2022'),
+            ('rubiconn.jpg', 'Jeep Rubicon', '2020'),
+            ('rollsroyce.jpg', 'Rolls-Royce Phantom', '2021'),
+            ('limosin.jpg', 'Limousine Executive', '2022')] %}
+        <div class="car-item">
+            <img src="{{ url_for('static', filename='img/' ~ img) }}" class="car-img" alt="{{ name }}">
+            <p class="car-name">{{ name }}</p>
+            <p class="car-year">{{ year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <header><h1>DEALER NFA</h1></header>
+
+    <footer>
+        <p>&copy; 2025 NFA Dealer. All rights reserved.</p>
+    </footer>
+</body>
+</html>

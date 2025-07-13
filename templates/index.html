@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gambar Vertikal</title>
+  <style>
+    .gambar-container img {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gambar Tampil Vertikal</h1>
+  <div class="gambar-container">
+    <img src="{{ url_for('static', filename='img/porce.webp') }}" alt="Gambar 1" />
+    <img src="{{ url_for('static', filename='img/rollsroyce.jpg') }}" alt="Gambar 2" />
+    <img src="{{ url_for('static', filename='img/minicooper.jpg') }}" alt="Gambar 3" />
+  </div>
+</body>
+</html>
